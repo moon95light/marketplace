@@ -1,0 +1,11 @@
+{
+    "require": {
+        "manticoresoftware/manticoresearch-php": "^3.1",
+        "firebase/php-jwt": "^6.9",
+        "casdoor/casdoor-php-sdk": "^1.2",
+        "vendor/package": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^10.4"
+    }
+}

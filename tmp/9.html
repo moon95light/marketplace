@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.0.0/mdb.min.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <style>
+        :root {
+            --white: #fff;
+            --black: #221f1f;
+            --lightpurple: #e0e0eb;
+            --darkgray: #1e1f26;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        button {
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            outline: none;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        body {
+            position: relative;
+            font: 16px/1.5 sans-serif;
+            color: var(--white);
+        }
+
+
+        /* MAIN RULES
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+        .trigger-menu-wrapper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+            z-index: 2;
+            background: var(--lightpurple);
+            transition: transform 0.4s;
+        }
+
+        .page-header .trigger-menu {
+            display: flex;
+            align-items: center;
+            font-size: 1.3rem;
+            color: var(--white);
+            letter-spacing: 0.2em;
+        }
+
+        .page-header .trigger-menu svg {
+            fill: var(--white);
+            margin-right: 8px;
+            transition: transform 0.3s;
+        }
+
+        .page-header .menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: none;
+            text-align: center;
+            padding: 15vh 0 5vh;
+            overflow: auto;
+            z-index: 1;
+            background: var(--lightpurple);
+        }
+
+        .page-header .menu a {
+            font-size: 3rem;
+        }
+
+        .page-header .sub-menu a {
+            font-size: 1.5rem;
+        }
+
+        .lottie-wrapper {
+            position: fixed;
+            bottom: 50px;
+            right: 25px;
+            z-index: 1;
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+        .page-main section {
+            position: relative;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            height: 100vh;
+        }
+
+        .page-main section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.25);
+        }
+
+
+        /* BODY CLASSES
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+        
+
+        .scroll-down .trigger-menu-wrapper {
+            transform: translate3d(0, -100%, 0);
+        }
+
+        .scroll-down .lottie-wrapper {
+            background: var(--darkgray);
+        }
+
+        .scroll-up .trigger-menu-wrapper {
+            transform: none;
+        }
+
+        .scroll-up:not(.menu-open) .trigger-menu-wrapper {
+            background: var(--lightpurple);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <header class="page-header">
+        <nav data-mdb-navbar-init class="navbar navbar-expand-lg navbar-light bg-body-tertiary">
+            <!-- Container wrapper -->
+            <div class="container-fluid trigger-menu-wrapper">
+                <!-- Toggle button -->
+                <button data-mdb-collapse-init class="navbar-toggler" type="button"
+                    data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+
+                <!-- Collapsible wrapper -->
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <!-- Navbar brand -->
+                    <a class="navbar-brand mt-2 mt-lg-0" href="#">
+                        <img src="https://mdbcdn.b-cdn.net/img/logo/mdb-transaprent-noshadows.webp" height="15"
+                            alt="MDB Logo" loading="lazy" />
+                    </a>
+                    <!-- Left links -->
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Dashboard</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Team</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Projects</a>
+                        </li>
+                    </ul>
+                    <!-- Left links -->
+                </div>
+            </div>
+            <!-- Container wrapper -->
+        </nav>
+        <!-- Navbar -->
+    </header>
+
+    <a href="" role="button" aria-label="Toggle menu" class="lottie-wrapper">
+        <lottie-player src="https://assets10.lottiefiles.com/datafiles/9gIwZ2uiiKglyb0/data.json"
+            style="width: 60px; height: 60px;"></lottie-player>
+    </a>
+
+    <main class="page-main">
+        <section style="background-image:url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/freedom.jpg);">
+        </section>
+        <section style="background-image:url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/travel.jpg);">
+        </section>
+    </main>
+
+</body>
+<!-- MDB -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.0.0/mdb.umd.min.js"></script>
+
+<script>
+    const body = document.body;
+    const nav = document.querySelector(".page-header nav");
+    const menu = document.querySelector(".page-header .menu");
+    const scrollUp = "scroll-up";
+    const scrollDown = "scroll-down";
+    let lastScroll = 0;
+
+    window.addEventListener("scroll", () => {
+        const currentScroll = window.pageYOffset;
+        if (currentScroll <= 0) {
+            body.classList.remove(scrollUp);
+            return;
+        }
+
+        if (currentScroll > lastScroll && !body.classList.contains(scrollDown)) {
+            // down
+            body.classList.remove(scrollUp);
+            body.classList.add(scrollDown);
+        } else if (
+            currentScroll < lastScroll &&
+            body.classList.contains(scrollDown)
+        ) {
+            // up
+            body.classList.remove(scrollDown);
+            body.classList.add(scrollUp);
+        }
+        lastScroll = currentScroll;
+    });
+</script>
+
+</html>

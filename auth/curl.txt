@@ -1,0 +1,30 @@
+step 1 (get id of user): 
+
+curl -X GET -H "Authorization: Bearer {acessToken}" https://tubie.casdoor.com/api/userinfo
+
+step 2 (get all user info): 
+  
+use usermame, client id,  and secret
+curl -X 'GET' 'https://tubie.casdoor.com/api/get-user?id=built-in/jason&clientId=5ba66fc84fa1946c9b55&clientSecret=a09ae018e9b562b7add5af8230d7921161fa853e'
+
+curl -X 'GET' 'https://tubie.casdoor.com/api/get-user?id=built-in/b185feef-402d-41e2-91a4-9f0957ce9bdf&clientId=5ba66fc84fa1946c9b55&clientSecret=a09ae018e9b562b7add5af8230d7921161fa853e'
+curl -X 'GET' 'https://tubie.casdoor.com/api/get-user?id=built-in%2Fb185feef-402d-41e2-91a4-9f0957ce9bdf&clientId=5ba66fc84fa1946c9b55&clientSecret=a09ae018e9b562b7add5af8230d7921161fa853e'
+curl -X 'GET' 'https://tubie.casdoor.com/api/get-user?id=built-in%2F{b185feef-402d-41e2-91a4-9f0957ce9bdf}&clientId=5ba66fc84fa1946c9b55&clientSecret=a09ae018e9b562b7add5af8230d7921161fa853e'
+
+b185feef-402d-41e2-91a4-9f0957ce9bdf
+
+ 
+//curl -X 'GET' 'https://tubie.casdoor.com/api/get-user?id=built-in%2F{userIdFromStep1}'
+
+step 3 (update user info): 
+
+curl -X 'POST' \
+'https://tubie.casdoor.com/api/update-user?id=built-in%2F{userIdFromStep1}' \
+-H 'Content-Type: application/json' \
+-H "Authorization: Bearer {acessToken}" \
+-d '{json-data-property-from-step-2}'
+
+Step 4 (Delete user): 
+
+curl -X 'POST' 'https://tubie.casdoor.com/api/delete-user' -H 'accept: application/json' -H 'Content-Type: application/json' -H "Authorization: Bearer {acessToken}" -d '{json-data-property-from-step-2}'
+ 

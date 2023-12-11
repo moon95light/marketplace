@@ -1,0 +1,44 @@
+ <html>
+  <head>
+    <!-- Load any dependent stylesheets. -->
+    <link href="path/to/video-js.css" rel="stylesheet"> 
+  </head>
+
+  <body>   
+ https://cdn.audition.tube/audition/uploads/5850fb10-ada9-42c0-89cb-eca3786534eb/5850fb10-ada9-42c0-89cb-eca3786534eb/playlist.m3u8
+ 
+       <video id="my-video" class="video-js" controls='false' autoplay="true"  preload="auto" width="640" height="264" data-setup="{}"
+                    class="video-js vjs-default-skin xvjs-big-play-centered vjs-16-9">
+                    <source  hidden 
+                        src="https://cdn.audition.tube/audition/uploads/5850fb10-ada9-42c0-89cb-eca3786534eb/5850fb10-ada9-42c0-89cb-eca3786534eb/playlist.m3u8"
+                        type="application/x-mpegURL"  controls='false'  />
+                </video>
+                
+    <!-- Load dependent scripts -->
+ 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/video.js/8.5.3/video-js.min.css" integrity="sha512-OxFNWAvUrErw1lQmH+xnjFJZePnr6zA0/H/ldxoXaYUn3yHcII7RpB6cfysY0rhxRZeCIUzQIECLOCXIYrfOIw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/video.js/8.5.3/video.min.js" integrity="sha512-wUWE15BM3aEd9D+01qFw8QdCoeB/wDYmOOqkgeeKiYXE+kiPOboLcOES+1lJMa5NiPBPBQenZYoOWRhf5jv4sw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+ 
+<script>
+  const player = videojs('my-video');
+   //alert( "https://cdn.audition.tube/audition/uploads/" + vid + "/" + vid + "/playlist.m3u8" );
+  player.src({ src: "https://cdn.audition.tube/audition/uploads/5850fb10-ada9-42c0-89cb-eca3786534eb/5850fb10-ada9-42c0-89cb-eca3786534eb/playlist.m3u8", type: 'application/x-mpegURL', });
+  player.play();
+
+</script>
+ 
+ 
+ 
+<script>     
+//var player = document.getElementById("my-video"); 
+//player.play();
+
+
+</script>
+
+
+  </body>
+</html>
+
+
